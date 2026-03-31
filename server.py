@@ -462,6 +462,6 @@ def handle_call_reject(data):
     if sid:
         emit("call_rejected", {"from": data["from"]}, to=sid)
 
-if __name__ == "__main__":
-    port = int(os.getenv("PORT", 5000))
-    socketio.run(app, host="0.0.0.0", port=port, debug=False)
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
+    socketio.run(app, host='0.0.0.0', port=port)
