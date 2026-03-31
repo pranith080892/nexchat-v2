@@ -3,7 +3,7 @@ services:
     name: nexchat-v2
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn --worker-class eventlet -w 1 server:app
+    startCommand: gunicorn -k geventwebsocket.gunicorn.workers.GeventWebSocketWorker -w 1 server:app
     envVars:
       - key: MONGO_URI
         value: mongodb+srv://admin:lMbldplhPX9cJMfI@chatverse.so0lysv.mongodb.net/nexchat_v2?retryWrites=true&w=majority&appName=ChatVerse

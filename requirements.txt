@@ -3,7 +3,8 @@ flask-socketio
 pymongo
 werkzeug
 python-dotenv
-eventlet
+gevent
+gevent-websocket
 dnspython
 certifi
 gunicorn
